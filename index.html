@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse Bedrock - Servidor de Minecraft</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #38bdf8;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
+            margin-bottom: 25px;
+        }
+
+        .info-group {
+            margin-bottom: 20px;
+        }
+
+        .info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .connection-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0f172a;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #e2e8f0;
+        }
+
+        .copy-btn {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #0369a1;
+        }
+
+        .rules-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .rules-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #334155;
+            color: #cbd5e1;
+        }
+
+        .rules-list li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Eclipse Bedrock</h1>
+        <p class="subtitle">Servidor Oficial de Minecraft Bedrock</p>
+    </header>
+
+    <div class="card-container">
+        <h2 style="margin-bottom: 15px; color: #f8fafc;">Dados de Conexão</h2>
+        
+        <div class="info-group">
+            <label>Endereço / IP</label>
+            <div class="connection-box">
+                <span id="ip">Bernague.aternos.me</span>
+                <button class="copy-btn" onclick="copyText('ip')">Copiar</button>
+            </div>
+        </div>
+
+        <div class="info-group">
+            <label>Porta</label>
+            <div class="connection-box">
+                <span id="porta">19132</span>
+                <button class="copy-btn" onclick="copyText('porta')">Copiar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <h2 style="margin-bottom: 15px; color: #f8fafc;">Regras do Servidor</h2>
+        <ul class="rules-list">
+            <li>1. Respeite todos os jogadores e a equipe do servidor.</li>
+            <li>2. Proibido o uso de hacks, cheats ou vantagens injustas.</li>
+            <li>3. Proibido destruição (grief) de construções alheias.</li>
+            <li>4. Divirta-se e bom jogo!</li>
+        </ul>
+    </div>
+
+    <footer>
+        &copy; Eclipse Bedrock - Todos os direitos reservados.
+    </footer>
+
+    <script>
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copiado com sucesso: ' + text);
+            });
+        }
+    </script>
+</body>
+</html>
